@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareTech - Integração com Pulseira</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>CareTech</h1>
+      <p>Seu hub integrado para saúde e bem-estar com dispositivos IoT.</p>
+    </div>
+  </header>
+  
+  <nav class="navbar">
+    <div class="container">
+      <ul>
+        <li><a href="#pulseira-info">Pulseira</a></li>
+        <li><a href="#locais">Locais</a></li>
+        <li><a href="#dispositivos">Dispositivos IoT</a></li>
+        <li><a href="#configuracoes">Configurações</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <main>
+    <!-- Seção Inicial -->
+    <section id="pulseira-info" class="pulseira-info">
+      <div class="container">
+        <h2>Informações da Pulseira</h2>
+        <p>Acompanhe os dados mais recentes de sua saúde:</p>
+        <div class="pulseira-grid">
+          <div class="box">
+            <h3>Batimentos Cardíacos</h3>
+            <p><strong>75 bpm</strong> (normal)</p>
+            <span>Última atualização: 5 segundos atrás</span>
+          </div>
+          <div class="box">
+            <h3>Nível de Estresse</h3>
+            <p><strong>Moderado</strong></p>
+            <span>Interação sugerida: Respiração guiada</span>
+          </div>
+          <div class="box">
+            <h3>Oxigenação do Sangue</h3>
+            <p><strong>98%</strong> (ideal)</p>
+            <span>Monitoramento contínuo ativo</span>
+          </div>
+          <div class="box">
+            <h3>Temperatura da Pele</h3>
+            <p><strong>36.5°C</strong></p>
+            <span>Dentro do intervalo normal</span>
+          </div>
+        </div>
+        <button class="btn">Sincronizar Dados</button>
+      </div>
+    </section>
+    
+    <!-- Aba: Locais -->
+    <section id="locais" class="locais">
+      <div class="container">
+        <h2>Gerenciar Locais</h2>
+        <p>Adicione, edite ou remova locais onde seus dispositivos IoT estão instalados:</p>
+        <form action="#">
+          <label for="local">Nome do Local:</label>
+          <input type="text" id="local" name="local" placeholder="Ex: Sala de Estar" required>
+          
+          <label for="descricao">Descrição:</label>
+          <textarea id="descricao" name="descricao" rows="3" placeholder="Ex: Local principal para monitoramento"></textarea>
+          
+          <button type="submit" class="btn">Adicionar Local</button>
+        </form>
+        
+        <div class="locais-list">
+          <h3>Locais Cadastrados:</h3>
+          <ul>
+            <li>
+              <strong>Sala de Estar</strong> - Local principal com dispositivos integrados
+              <button class="btn-small">Editar</button>
+              <button class="btn-small btn-danger">Remover</button>
+            </li>
+            <li>
+              <strong>Quarto</strong> - Monitoramento de sono ativo
+              <button class="btn-small">Editar</button>
+              <button class="btn-small btn-danger">Remover</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Aba: Dispositivos IoT -->
+    <section id="dispositivos" class="dispositivos">
+      <div class="container">
+        <h2>Gerenciar Dispositivos IoT</h2>
+        <p>Adicione novos dispositivos IoT ao sistema:</p>
+        <form action="#">
+          <label for="dispositivo">Nome do Dispositivo:</label>
+          <input type="text" id="dispositivo" name="dispositivo" placeholder="Ex: Soundbar JBL" required>
+          
+          <label for="tipo">Tipo de Dispositivo:</label>
+          <select id="tipo" name="tipo">
+            <option value="iluminacao">Iluminação</option>
+            <option value="temperatura">Temperatura</option>
+            <option value="som">Som</option>
+            <option value="outro">Outro</option>
+          </select>
+          
+          <label for="local-associado">Local Associado:</label>
+          <select id="local-associado" name="local-associado">
+            <option value="sala">Sala de Estar</option>
+            <option value="quarto">Quarto</option>
+          </select>
+          
+          <button type="submit" class="btn">Adicionar Dispositivo</button>
+        </form>
+        
+        <div class="dispositivos-list">
+          <h3>Dispositivos Cadastrados:</h3>
+          <ul>
+            <li>
+              <strong>Soundbar JBL</strong> - Local: Sala de Estar - Tipo: Som
+              <button class="btn-small">Editar</button>
+              <button class="btn-small btn-danger">Remover</button>
+            </li>
+            <li>
+              <strong>Ar-Condicionado</strong> - Local: Quarto - Tipo: Temperatura
+              <button class="btn-small">Editar</button>
+              <button class="btn-small btn-danger">Remover</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Aba: Configurações -->
+    <section id="configuracoes" class="configuracoes">
+      <div class="container">
+        <h2>Configurações Personalizadas</h2>
+        <p>Personalize o funcionamento do sistema para atender às suas preferências:</p>
+        <form action="#">
+          <label for="frequencia-atualizacao">Frequência de Atualização:</label>
+          <select id="frequencia-atualizacao" name="frequencia-atualizacao">
+            <option value="1min">A cada 1 minuto</option>
+            <option value="5min">A cada 5 minutos</option>
+            <option value="10min">A cada 10 minutos</option>
+          </select>
+          
+          <label for="notificacoes">Notificações:</label>
+          <select id="notificacoes" name="notificacoes">
+            <option value="ativado">Ativado</option>
+            <option value="desativado">Desativado</option>
+          </select>
+          
+          <button type="submit" class="btn">Salvar Configurações</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 CareTech. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
